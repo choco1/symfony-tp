@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier - {{ parent() }}{% endblock %}
+
+{% block javascripts %}
+    <script src="https://js.stripe.com/v3/"></script>
+    {{ parent() }}
+    <script src="{{ asset('js/payment.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <h1 class="text-center my-4">Mon panier</h1>
+
+    <table class="table table-light shadow">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>
+                    <img width="100" class="img-fluid" src="{{ asset('img/uploads/' ~ item.image) }}" alt="{{ item.title }}">
+                </td>
+                <td>
+                    {{ item.title }}
+                </td>
+                <td>
+                    {{ item.price }} €
+                </td>
+                <td>
+                    <a href="{{ path('cart_remove', { id: item.id }) }}" class="btn btn-danger">X</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+            <tr>
+                <td></td>
+                <th>Total:</th>
+                <td>{{ cart.total }} €</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% if clientSecret %}
+    <div class="text-center mt-5">
+        <div id="stripe-card" class="form-control"></div>
+        <p id="card-error"></p>
+
+        <button id="stripe-pay" class="btn btn-primary btn-lg" data-client-secret="{{ clientSecret }}">
+            Payer
+        </button>
+    </div>
+    {% endif %}
+{% endblock %}

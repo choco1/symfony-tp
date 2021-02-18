@@ -1,0 +1,17 @@
+body {
+    background-color: lightgray;
+}
+
+.property-price {
+    font-size: 28px;
+}
+
+.AllCardImage {
+    object-fit: cover;
+    height: 300px;
+}
+
+.sold {
+    width: 80px;
+    position: absolute;
+}

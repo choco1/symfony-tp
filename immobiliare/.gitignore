@@ -1,0 +1,23 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+# On ignore le .idea de PhpStorm pour éviter les conflits en équipe
+.idea
+# On ignore tout le dossier uploads sauf le fichier default.png
+/public/img/uploads/*
+!/public/img/uploads/default.png
+!/public/img/uploads/fixtures/

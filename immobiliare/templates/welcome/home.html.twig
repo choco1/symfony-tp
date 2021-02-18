@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1>Mon agence Immobiliare</h1>
+        <p>Bienvenue sur l'agence...</p>
+
+        {# Dans Symfony, on a accès à une variable globale app #}
+        {# dump(app) #}
+
+        {# Pour récupérer la route actuelle #}
+        {# app.request.get('_route') #}
+    </div>
+
+    LES DERNIERES ANNONCES
+    Afficher les 4 annonces les plus récentes (par rapport à l'id)
+    LES ANNONCES T4
+    Afficher les annonces T4 seulement
+    LES ANNONCES MAISON
+    jointure... (voir le join dans le querybuilder)
+
+    X LUNDI MATIN: Authentification + Sécurité
+    X LUNDI APREM: Panier avec les annonces (Commande + Envoi de mail)
+    X MATIN: Paiement avec Stripe
+    MARDI APREM: React + Docker
+    MERCREDI, JEUDI, VENDREDI: TP Symfony (Exo)
+{% endblock %}
